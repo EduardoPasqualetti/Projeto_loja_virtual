@@ -5,7 +5,7 @@ namespace Projeto_loja_virtual
     {
         private DateTime data;
 
-        public float valor;
+        public double valor;
     
 
         public string Cancelar()
