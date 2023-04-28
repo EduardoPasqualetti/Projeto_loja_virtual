@@ -6,25 +6,32 @@ namespace Projeto_loja_virtual
         public abstract class CartaoClasseMae
         {
             //PROPRIEDADES
-            public string Bandeira;
+            public string Bandeira {get; set;}
 
-            public string NumeroCartao;
+            public string NumeroCartao {get; set;}
 
-            public string Titular;
+            public string Titular {get; set;}
 
-            public string Cvv;
+            public string Cvv {get; set;}
 
             //MÉTODOS
 
-            public void Pagar()
-            {
-                
-            }
+            public abstract void Pagar();
 
             public string SalvarCartao()
             {
                 return "0";
             }
+
+
+
+            public class Cartao : Pagamento
+            {
+               
+            }
+            
+
+
         }
     }
 }
