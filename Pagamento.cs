@@ -3,14 +3,12 @@ namespace Projeto_loja_virtual
 {
     public class Pagamento
     {
-        private DateTime data;
+        private DateTime data {get; set;}
 
-        public double valor;
-    
-
+        public float valor {get; set;}
         public string Cancelar()
         {
-            return "0";
+            return $"A compra foi cancelada !";
         }
     }
 }
