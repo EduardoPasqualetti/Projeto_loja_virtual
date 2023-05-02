@@ -8,36 +8,24 @@ namespace Projeto_loja_virtual
         {
             public double valor;
         }
-        
-        public override double CalcularValor()
-        {
-            desconto = valor * 0.12;
-            valorFinal = valor - desconto;
-            Console.WriteLine($"Valor a ser pago: {valorFinal}.");
-            Console.WriteLine(codigoDeBarras.Next(1000000000, 400000000));
-               
-        }
-
-        Random codigoDeBarras = new Random();
-
-        private string CodigoDeBarras;
+            
+                Random codigoDeBarras = new Random();
 
         public double desconto {get; set;}
         public double valor {get; set;}
 
         public double valorFinal {get; set;}
 
+
         // Metodo
-        public void Registrar()
+        public string Registrar()
         {
+            desconto = valor * 0.12;
+            valorFinal = valor - desconto; 
 
+            return @$"Valor a ser pago, com desconto: {valorFinal}
+            Codigo de barras: {codigoDeBarras.Next(1000000000, 400000000)}";
         }
-
-        public void CalcularDesconto()
-        {
-            desconto = valor * 0.88;
-        }
-
 
 
 
