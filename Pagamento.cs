@@ -10,7 +10,7 @@ namespace Projeto_loja_virtual
 
         public string Cancelar()
         {
-            return "0";
+            return "Operaçao Cancelada";
         }
     }
 }
