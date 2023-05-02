@@ -1,7 +1,18 @@
 namespace Projeto_loja_virtual
 {
-    public class Debito
+    public class Debito : Cartao
     {
-        private float Saldo;
+        public override void Pagar()
+        {
+            if (valor <= 5000)
+            {
+                Console.WriteLine($"Pagamento aprovado, o valor da compra é: {this.valor}");
+                
+            }
+            else{
+                Console.WriteLine($"cartao recusado, saldo insuficiente");
+                
+            }
+        }
     }
 }
