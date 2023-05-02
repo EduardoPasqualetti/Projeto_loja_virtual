@@ -13,12 +13,13 @@ namespace Projeto_loja_virtual
             if (parcelamento <= 6)
             {
                 juros = valor * 1.05 / parcelamento;
-                Console.WriteLine($"O valor a ser pago e {parcelamento} parcelas de R${juros}");
+                Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de R${juros}");
                 
             }
             else if (parcelamento > 6 && parcelamento <= 12)
             {
-                juros = valor * 1.08;
+                juros = valor * 1.08 / parcelamento;
+                Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de R${juros}");
             }
             else
             {
