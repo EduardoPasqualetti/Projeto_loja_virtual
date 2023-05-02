@@ -1,37 +1,43 @@
 
 namespace Projeto_loja_virtual
 {
-    public class Cartao
+    public abstract class Cartao : Pagamento
     {
-        public abstract class CartaoClasseMae
+        //PROPRIEDADES
+        public string Bandeira { get; set; }
+
+        public string NumeroCartao { get; set; }
+
+        public string Titular { get; set; }
+
+        public string Cvv { get; set; }
+
+        //MÉTODOS
+
+        public abstract void Pagar();
+
+        public string SalvarCartao()
         {
-            //PROPRIEDADES
-            public string Bandeira {get; set;}
+            Console.WriteLine($"Informe a bandeira do cartão: ");
+            this.Bandeira = Console.ReadLine();
 
-            public string NumeroCartao {get; set;}
+            Console.WriteLine($"Informe o número do cartão: ");
+            this.NumeroCartao = Console.ReadLine();
 
-            public string Titular {get; set;}
+            Console.WriteLine($"Informe o nome do titular: ");
+            this.Titular = Console.ReadLine();
 
-            public string Cvv {get; set;}
+            Console.WriteLine($"Informe o Cvv do cartão: ");
+            this.Cvv = Console.ReadLine();
 
-            //MÉTODOS
+            return @$"A bandeira do cartão informado é: {this.Bandeira}
 
-            public abstract void Pagar();
+                O número do cartão informado é : {this.NumeroCartao}
 
-            public string SalvarCartao()
-            {
-                return "0";
-            }
+                O nome do titular do cartão informado: {this.Titular}
 
-
-
-            public class Cartao : Pagamento
-            {
-               
-            }
-            
-
-
+                O Cvv do cartão informado: {this.Cvv}";
         }
+                   
     }
 }
