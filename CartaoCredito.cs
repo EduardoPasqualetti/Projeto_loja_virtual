@@ -22,7 +22,7 @@ namespace Projeto_loja_virtual
             }
             else
             {
-
+                
 
                 do
                 {
@@ -34,7 +34,7 @@ namespace Projeto_loja_virtual
                         juros = valor * 1.05 / parcelamento;
                     Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de {juros:C2}");
-                        Console.WriteLine($"Data do Pagamento: {data:d}");
+                        Console.WriteLine($"Data do Pagamento: {data:f}");
                         
                     }
                     else if (parcelamento > 6 && parcelamento <= 12)
@@ -42,7 +42,7 @@ namespace Projeto_loja_virtual
                         juros = valor * 1.08 / parcelamento;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de {juros:C2}");
-                        Console.WriteLine($"Data do Pagamento: {data:d}");
+                        Console.WriteLine($"Data do Pagamento: {data:f}");
                        
                     }
                     else

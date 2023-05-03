@@ -12,7 +12,7 @@ namespace Projeto_loja_virtual
         Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Valor a ser pago, com desconto: {this.valor:C2}");
             Console.WriteLine($"Código de barras: {GerarCodigoBarras()}");
-            Console.WriteLine($"Data do Pagamento: {data:d}");
+            Console.WriteLine($"Data do Pagamento: {data:f}");
         Console.ResetColor();
         }
 

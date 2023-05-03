@@ -11,7 +11,7 @@ namespace Projeto_loja_virtual
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Pagamento aprovado, o valor da compra é: {this.valor:C2}");
-                Console.WriteLine($"Data do Pagamento: {data:d}");
+                Console.WriteLine($"Data do Pagamento: {data:f}");
                 
             }
             else{
