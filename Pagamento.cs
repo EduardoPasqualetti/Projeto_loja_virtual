@@ -3,12 +3,13 @@ namespace Projeto_loja_virtual
 {
     public class Pagamento
     {
-        private DateTime data {get; set;}
+        private DateTime data = DateTime.Now ;
 
         public float valor {get; set;}
         public string Cancelar()
         {
-            return $"A compra foi cancelada !";
+            Console.ForegroundColor = ConsoleColor.Red;
+            return $"A Sua Compra foi Cancelada!";
         }
     }
 }

@@ -2,6 +2,7 @@ namespace Projeto_loja_virtual
 {
     public class CartaoCredito : Cartao
     {
+        private DateTime data = DateTime.Now ;
         public float limite = 5000;
 
         public double juros { get; set; }
@@ -11,12 +12,13 @@ namespace Projeto_loja_virtual
         public override void Pagar()
         {
 
-
+            
 
             if (valor > limite)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Transacao negada, limite insuficiente");
-
+                Console.ResetColor();
             }
             else
             {
@@ -30,21 +32,29 @@ namespace Projeto_loja_virtual
                     if (parcelamento > 1 && parcelamento <= 6)
                     {
                         juros = valor * 1.05 / parcelamento;
-                        Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de R${juros}");
-
+                    Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de {juros:C2}");
+                        Console.WriteLine($"Data do Pagamento: {data:d}");
+                        
                     }
                     else if (parcelamento > 6 && parcelamento <= 12)
                     {
                         juros = valor * 1.08 / parcelamento;
-                        Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de R${juros}");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"O valor a ser pago é {parcelamento} parcelas de {juros:C2}");
+                        Console.WriteLine($"Data do Pagamento: {data:d}");
+                       
                     }
                     else
                     {
-                        Console.WriteLine($"Parcelamos somente em ate 12x");
-
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"!!! Parcelamos somente em ate 12x !!!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"Para tentar novamente Digite: 'Enter'");
+                        Console.ResetColor();
                     }
-                    Console.WriteLine($"Para tentar novamente digite enter");
-                    
+
+
                     Console.ReadKey();
                 } while (parcelamento > 12);
 
