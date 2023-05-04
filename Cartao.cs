@@ -30,6 +30,10 @@ namespace Projeto_loja_virtual
             Console.WriteLine($"Informe o Cvv do cartão: ");
             this.Cvv = Console.ReadLine();
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"As informacoes do cartao foram salvas!");
+            Console.ResetColor();
+
             return @$"A bandeira do cartão informado é: {this.Bandeira}
 
                 O número do cartão informado é : {this.NumeroCartao}
@@ -38,6 +42,6 @@ namespace Projeto_loja_virtual
 
                 O Cvv do cartão informado: {this.Cvv}";
         }
-                   
+
     }
 }

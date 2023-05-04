@@ -16,7 +16,7 @@ namespace Projeto_loja_virtual
             }
             else{
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Seu Cartão foi recusado, o seu saldo é insuficiente");
+                Console.WriteLine($"Cartão recusado, o seu saldo é insuficiente!");
                 
             }
         }

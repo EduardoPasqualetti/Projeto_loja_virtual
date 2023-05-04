@@ -32,7 +32,7 @@ Console.WriteLine(@$"
     ");
 opcao = Console.ReadLine();
 
-if (opcao != "0")
+if (opcao != "0" && opcao != "4")
 {
     Console.WriteLine($"Informe o valor da compra:");
     valorCompra = float.Parse(Console.ReadLine());
@@ -48,16 +48,16 @@ if (opcao != "0")
 
             break;
         case "2":
-            Console.WriteLine($"Digite o nome do titular do cartao:");
+            Console.WriteLine($"Digite o nome do titular do cartão:");
             deb.Titular = Console.ReadLine();
-            Console.WriteLine($"Informe a Bandeira do cartao:");
+            Console.WriteLine($"Informe a Bandeira do cartão:");
             deb.Bandeira = Console.ReadLine();
-            Console.WriteLine($"Informe o numero do cartao:");
+            Console.WriteLine($"Informe o numero do cartão:");
             deb.NumeroCartao = Console.ReadLine();
-            Console.WriteLine($"Informe o CVV do cartao:");
+            Console.WriteLine($"Informe o CVV do cartão:");
             deb.Cvv = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"As informacoes do cartao foram salvas!");
+            Console.WriteLine($"As informações do cartao foram salvas!");
             Console.ResetColor();
 
             deb.valor = valorCompra;
@@ -66,16 +66,16 @@ if (opcao != "0")
             Console.WriteLine($"");
             break;
         case "3":
-            Console.WriteLine($"Digite o nome do titular do cartao:");
+            Console.WriteLine($"Digite o nome do titular do cartão:");
             cred.Titular = Console.ReadLine();
-            Console.WriteLine($"Informe a Bandeira do cartao:");
+            Console.WriteLine($"Informe a Bandeira do cartão:");
             cred.Bandeira = Console.ReadLine();
-            Console.WriteLine($"Informe o numero do cartao:");
+            Console.WriteLine($"Informe o número do cartão:");
             cred.NumeroCartao = Console.ReadLine();
-            Console.WriteLine($"Informe o CVV do cartao:");
+            Console.WriteLine($"Informe o CVV do cartão:");
             cred.Cvv = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"As informacoes do cartao foram salvas!");
+            Console.WriteLine($"As informações do cartão foram salvas!");
             Console.ResetColor();
 
             cred.valor = valorCompra;
@@ -91,7 +91,7 @@ if (opcao != "0")
         default:
             Console.WriteLine($"");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"Opcao Invalida, Tente novamente e escolha uma opcao valida!");
+            Console.WriteLine($"Opção Inválida, Tente novamente e escolha uma opção válida!");
             Console.WriteLine($"");
             Console.ResetColor();
             break;
@@ -115,7 +115,7 @@ if (opcao != "0")
     ");
         opcao = Console.ReadLine();
 
-        if (opcao != "0")
+        if (opcao != "0" && opcao != "4")
         {
             Console.WriteLine($"Informe o valor da compra:");
             valorCompra = float.Parse(Console.ReadLine());
@@ -131,44 +131,17 @@ if (opcao != "0")
 
                     break;
                 case "2":
-                    Console.WriteLine($"Digite o nome do titular do cartao:");
-                    deb.Titular = Console.ReadLine();
-                    Console.WriteLine($"Informe a Bandeira do cartao:");
-                    deb.Bandeira = Console.ReadLine();
-                    Console.WriteLine($"Informe o numero do cartao:");
-                    deb.NumeroCartao = Console.ReadLine();
-                    Console.WriteLine($"Informe o CVV do cartao:");
-                    deb.Cvv = Console.ReadLine();
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"As informacoes do cartao foram salvas!");
-                    Console.ResetColor();
-
+                    deb.SalvarCartao();
                     deb.valor = valorCompra;
                     Console.WriteLine($"");
                     deb.Pagar();
                     Console.WriteLine($"");
                     break;
                 case "3":
-                    Console.WriteLine($"Digite o nome do titular do cartao:");
-                    cred.Titular = Console.ReadLine();
-                    Console.WriteLine($"Informe a Bandeira do cartao:");
-                    cred.Bandeira = Console.ReadLine();
-                    Console.WriteLine($"Informe o numero do cartao:");
-                    cred.NumeroCartao = Console.ReadLine();
-                    Console.WriteLine($"Informe o CVV do cartao:");
-                    cred.Cvv = Console.ReadLine();
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"As informacoes do cartao foram salvas!");
-                    Console.ResetColor();
-
+                    cred.SalvarCartao();
                     cred.valor = valorCompra;
                     Console.WriteLine($"");
                     cred.Pagar();
-                    Console.WriteLine($"");
-                    break;
-                case "4":
-                    Console.WriteLine($"");
-                    Console.WriteLine($"{loja.Cancelar()}");
                     Console.WriteLine($"");
                     break;
                 default:
@@ -180,7 +153,7 @@ if (opcao != "0")
                     break;
             }
         }
-        else
+        else if (opcao == "0")
         {
             Console.WriteLine($"");
             Console.ForegroundColor = ConsoleColor.Red;
@@ -188,16 +161,29 @@ if (opcao != "0")
             Console.WriteLine($"");
             Console.ResetColor();
         }
+        else
+        {
+            Console.WriteLine($"");
+            Console.WriteLine($"{loja.Cancelar()}");
+            Console.WriteLine($"");
+        }
 
-    } while (opcao != "0");
+    } while (opcao != "0" && opcao != "4");
 }
-else
+else if (opcao == "0")
 {
     Console.WriteLine($"");
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine($"Saindo do sistema!");
     Console.WriteLine($"");
     Console.ResetColor();
+}
+else
+{
+    Console.WriteLine($"");
+    Console.WriteLine($"{loja.Cancelar()}");
+    Console.WriteLine($"");
+
 }
 
 

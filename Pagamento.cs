@@ -10,6 +10,7 @@ namespace Projeto_loja_virtual
         {
             Console.ForegroundColor = ConsoleColor.Red;
             return $"A Sua Compra foi Cancelada!";
+            Console.ResetColor();
         }
     }
 }
